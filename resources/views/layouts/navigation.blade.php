@@ -137,7 +137,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Admin Kominfo</a>
+                <a href="{{ route('profile.edit') }}" class="d-block">Admin Kominfo</a>
             </div>
         </div>
 
@@ -189,10 +189,6 @@
                 </li>
 
                 <li class="nav-item" style="margin-top:15px;">
-                    <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
-                    </x-dropdown-link>
-
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-dropdown-link :href="route('logout')" class="btn-logout nav-link"

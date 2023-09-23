@@ -45,7 +45,9 @@
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
+            <div class="content-wrapper">
+                {{ $slot }}
+            </div>
         </main>
 
         <footer class="main-footer">
