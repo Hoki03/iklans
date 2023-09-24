@@ -44,6 +44,7 @@
         @include('layouts.navigation')
 
         <!-- Page Content -->
+
         <main>
             <div class="content-wrapper">
                 {{ $slot }}
