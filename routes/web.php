@@ -29,9 +29,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin'], 'as' 
 });
 
 Route::group(['prefix' => 'operator', 'middleware' => ['auth', 'role:operator'], 'as' => 'operator.'], function () {
-    Route::get('/beranda', function () {
-        return view('dashboard');
-    })->name('beranda');
+    Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
