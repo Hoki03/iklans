@@ -47,7 +47,8 @@
 
         <main>
             <div class="content-wrapper">
-                {{ $slot }}
+                @yield('header')
+                @yield('content')
             </div>
         </main>
 
