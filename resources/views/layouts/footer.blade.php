@@ -1,5 +1,4 @@
-@extends('layout.app')
-@section('footer')
+
     <footer class="main-footer">
         <strong>Copyright &copy; 2023 <a href="#">Iklan</a>.</strong>
         All rights reserved.
@@ -7,4 +6,3 @@
             <b>Version</b> 1.0.0
         </div> -->
     </footer>
-@endsection

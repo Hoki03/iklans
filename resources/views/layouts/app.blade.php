@@ -49,9 +49,10 @@
             <div class="content-wrapper">
                 @yield('header')
                 @yield('content')
-                @yield('footer')
             </div>
         </main>
+
+        @include('layouts.footer')
     </div>
 
 
