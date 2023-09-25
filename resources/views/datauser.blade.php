@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2 ">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Transaksi</h1>
+                    <h1 class="m-0">Data User</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -22,14 +22,14 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row mb-3">
-            <a href="form_user" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah</a>
+            <a href="transaksi" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah</a>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="table_user" class="table table-bordered table-striped">
+                        <table id="datauser" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
