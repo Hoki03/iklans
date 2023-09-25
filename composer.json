@@ -5,7 +5,9 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
+
         "php": "^8.0",
+>>>>>>> a062bccb568db49c343813ad7093407f110a59ba
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
