@@ -138,7 +138,7 @@
                 <!-- /.card -->
             </div>
 
-        </div>
-    </section>
-    <!-- /.card-body -->
+    </div>
+</section>
+<!-- /.card-body -->
 @endsection
