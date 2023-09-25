@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin'], 'as' => 'admin.'], function () {
     Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
+    Route::get('/transaksi', [HomeController::class, 'transaksi'])->name('transaksi');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

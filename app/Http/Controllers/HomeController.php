@@ -10,7 +10,10 @@ class HomeController extends Controller
 {
     public function beranda()
     {
-        $role = Auth::user()->level;
-        return view('dashboard', compact('role'));
+        return view('dashboard');
+    }
+    public function transaksi()
+    {
+        return view('transaksi');
     }
 }
