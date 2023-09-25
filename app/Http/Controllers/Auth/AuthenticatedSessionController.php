@@ -23,13 +23,18 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
         $request->authenticate();
-
         $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user() && Auth::user()->level == 'admin') {
+            return redirect()->route('admin.beranda');
+        } elseif (Auth::user() && Auth::user()->level == 'operator') {
+            return redirect()->route('operator.beranda');
+        } else {
+            Auth::guard('web')->logout();
+            return redirect()->route('login')->with('status', 'You are not authorized to access this page.');
+        }
     }
 
     /**

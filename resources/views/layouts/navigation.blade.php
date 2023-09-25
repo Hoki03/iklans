@@ -37,7 +37,11 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="{{ route('profile.edit') }}" class="d-block">Admin Kominfo</a>
+                
+                @if ($role == 'admin')
+                    <a href="{{ route('admin.profile.edit') }}" class="d-block">Admin Kominfo</a>
+                @endif
+
             </div>
         </div>
 
