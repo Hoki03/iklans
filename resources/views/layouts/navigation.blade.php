@@ -1,4 +1,3 @@
-
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -37,9 +36,13 @@
                     alt="User Image">
             </div>
             <div class="info">
-                
-                @if ($role == 'admin')
+
+                @if (Auth::user()->level == 'admin')
                     <a href="{{ route('admin.profile.edit') }}" class="d-block">Admin Kominfo</a>
+                @endif
+
+                @if (Auth::user()->level == 'operator')
+                    <a href="{{ route('operator.profile.edit') }}" class="d-block">Operator Kominfo</a>
                 @endif
 
             </div>
@@ -79,12 +82,15 @@
                         <p>Transaksi</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="data_user" class="nav-link btn-menu">
-                        <i class="ri-folder-user-fill"></i>
-                        <p>Data user</p>
-                    </a>
-                </li>
+                @if (Auth::user()->level == 'admin')
+                    <li class="nav-item">
+                        <a href="data_user" class="nav-link btn-menu">
+                            <i class="ri-folder-user-fill"></i>
+                            <p>Data user</p>
+                        </a>
+                    </li>
+                @endif
+
                 <li class="nav-item">
                     <a href="data_transaksi" class="nav-link btn-menu">
                         <i class="ri-folder-open-fill"></i>
