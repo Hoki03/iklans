@@ -27,10 +27,8 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
         $request->session()->regenerate();
-        if (Auth::user() && Auth::user()->level == 'admin') {
-            return redirect()->route('admin.beranda');
-        } elseif (Auth::user() && Auth::user()->level == 'operator') {
-            return redirect()->route('operator.beranda');
+        if (Auth::user()) {
+            return redirect()->route('beranda');
         } else {
             Auth::guard('web')->logout();
             return redirect()->route('login')->with('status', 'You are not authorized to access this page.');

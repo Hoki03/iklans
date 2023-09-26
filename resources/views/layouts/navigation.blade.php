@@ -38,11 +38,11 @@
             <div class="info">
 
                 @if (Auth::user()->level == 'admin')
-                    <a href="{{ route('admin.profile.edit') }}" class="d-block">Admin Kominfo</a>
+                    <a href="{{ route('profile.edit') }}" class="d-block">Admin Kominfo</a>
                 @endif
 
                 @if (Auth::user()->level == 'operator')
-                    <a href="{{ route('operator.profile.edit') }}" class="d-block">Operator Kominfo</a>
+                    <a href="{{ route('profile.edit') }}" class="d-block">Operator Kominfo</a>
                 @endif
 
             </div>

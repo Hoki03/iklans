@@ -10,7 +10,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
+                        <li class="breadcrumb-item active">Beranda</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -120,32 +120,7 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <?php
-                        function tanggal($tanggal)
-                        {
-                            $bulan = [
-                                1 => 'Januari',
-                                'Februari',
-                                'Maret',
-                                'April',
-                                'Mei',
-                                'Juni',
-                                'Juli',
-                                'Agustus',
-                                'September',
-                                'Oktober',
-                                'November',
-                                'Desember',
-                            ];
-                        
-                            $pecahkan = explode('-', $tanggal);
-                        
-                            // variabel pecahkan 0 = tahun
-                            // variabel pecahkan 1 = bulan
-                            // variabel pecahkan 2 = tanggal
-                        
-                            return $pecahkan[2] . ' ' . $bulan[(int) $pecahkan[1]] . ' ' . $pecahkan[0];
-                        } ?>
+
                         <div class="card-body p-0">
                             <div class="table-responsive">
                                 <table class="table m-0">
@@ -163,11 +138,10 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 1) { ?>
-                                            <td><a href="{{ route('operator.struk', ['id' => $d->id]) }}" rel="noopener"
-                                                    target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
-                                                <?php $d['Nominal']; ?>
+                                                Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>
                                             </td>
                                             <?php } ?>
                                         </tr>
@@ -221,11 +195,10 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 2) { ?>
-                                            <td><a href="{{ route('operator.struk', ['id' => $d->id]) }}" rel="noopener"
-                                                    target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
-                                                <?= $d['nominal'] ?>
+                                                Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>
                                             </td>
                                             <?php } ?>
                                         </tr>
