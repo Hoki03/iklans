@@ -28,7 +28,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            {{-- <h3>{{ $jum_transaksi }}</h3> --}}
+                            <h3>{{ $jum_transaksi }}</h3>
                             <p>Total Transaksi</p>
                         </div>
                         <div class="icon">
@@ -43,7 +43,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            {{-- <h3>{{ $jum_user }}</h3> --}}
+                            <h3>{{ $jum_user }}</h3>
                             <p>Pengguna</p>
                         </div>
                         <div class="icon">
@@ -58,7 +58,16 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-
+                            <?php $nilai = '0';
+                                    foreach ($data_transaksi as $d) : ?>
+                            <?php $dt = new DateTime($d['tanggal']); ?>
+                            <?php $now = new DateTime(); ?>
+                            <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) {
+                                $nilai = $nilai + 1;
+                            } ?>
+                            <?php endforeach
+                                    ?>
+                            <h3><?php echo $nilai; ?></h3>
 
                             <p>Transaksi Hari Ini</p>
                         </div>
@@ -73,6 +82,16 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
+                            <?php $nilai = '0';
+                                    foreach ($data_transaksi as $d) : ?>
+                            <?php $dt = new DateTime($d['tanggal']); ?>
+                            <?php $now = new DateTime(); ?>
+                            <?php if ($dt->format('Y-m') == $now->format('Y-m')) {
+                                $nilai = $nilai + 1;
+                            } ?>
+                            <?php endforeach
+                                    ?>
+                            <h3><?php echo $nilai; ?></h3>
 
                             <p>Transaksi Bulan Ini</p>
                         </div>
@@ -101,13 +120,71 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
+                        <?php
+                        function tanggal($tanggal)
+                        {
+                            $bulan = [
+                                1 => 'Januari',
+                                'Februari',
+                                'Maret',
+                                'April',
+                                'Mei',
+                                'Juni',
+                                'Juli',
+                                'Agustus',
+                                'September',
+                                'Oktober',
+                                'November',
+                                'Desember',
+                            ];
+                        
+                            $pecahkan = explode('-', $tanggal);
+                        
+                            // variabel pecahkan 0 = tahun
+                            // variabel pecahkan 1 = bulan
+                            // variabel pecahkan 2 = tanggal
+                        
+                            return $pecahkan[2] . ' ' . $bulan[(int) $pecahkan[1]] . ' ' . $pecahkan[0];
+                        } ?>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nama</th>
+                                            <th>Nominal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($data_transaksi as $d) : ?>
+                                        <?php $dt = new DateTime($d['tanggal']); ?>
+                                        <?php $now = new DateTime(); ?>
+                                        <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
+                                        <tr>
+                                            <?php if ($d['jenis_id'] == 1) { ?>
+                                            <td><a href="{{ route('operator.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><?= $d['nama'] ?></td>
+                                            <td>
+                                                <?php $d['Nominal']; ?>
+                                            </td>
+                                            <?php } ?>
+                                        </tr>
 
+                                        <?php } ?>
+
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
                             <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
                             <a href="data_transaksi" class="btn btn-sm btn-secondary float-right">Lihat Semua</a>
                         </div>
-                        <!-- /.card-footer -->
                     </div>
                     <!-- /.card -->
                 </div>
@@ -127,6 +204,40 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nama</th>
+                                            <th>Nominal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($data_transaksi as $d) : ?>
+                                        <?php $dt = new DateTime($d['tanggal']); ?>
+                                        <?php $now = new DateTime(); ?>
+                                        <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
+                                        <tr>
+                                            <?php if ($d['jenis_id'] == 2) { ?>
+                                            <td><a href="{{ route('operator.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><?= $d['nama'] ?></td>
+                                            <td>
+                                                <?= $d['nominal'] ?>
+                                            </td>
+                                            <?php } ?>
+                                        </tr>
+
+                                        <?php } ?>
+
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
                             <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
@@ -138,7 +249,7 @@
                 <!-- /.card -->
             </div>
 
-    </div>
-</section>
-<!-- /.card-body -->
+        </div>
+    </section>
+    <!-- /.card-body -->
 @endsection
