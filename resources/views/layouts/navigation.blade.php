@@ -76,7 +76,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="form" class="nav-link btn-menu">
+                    <a href="transaksi" class="nav-link btn-menu">
                         <!-- <i class="far fa-circle nav-icon"></i> -->
                         <i class="ri-folder-add-fill"></i>
                         <p>Transaksi</p>
