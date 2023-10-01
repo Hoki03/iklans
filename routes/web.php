@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
 
