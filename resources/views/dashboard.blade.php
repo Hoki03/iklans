@@ -138,7 +138,8 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 1) { ?>
-                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
                                                 Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>
@@ -191,7 +192,8 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 2) { ?>
-                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
                                                 Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>

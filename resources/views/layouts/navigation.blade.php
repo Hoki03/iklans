@@ -67,7 +67,8 @@
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('beranda') }}" class="nav-link active">
+                    <a href="{{ route('beranda') }}"
+                        class="nav-link {{ Route::currentRouteNamed('beranda') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt "></i>
                         <p>
                             Beranda
@@ -76,7 +77,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('transaksi.create') }}" class="nav-link btn-menu">
+                    <a href="{{ route('transaksi.create') }}"
+                        class="nav-link btn-menu {{ Route::currentRouteNamed('transaksi.create') ? 'active' : '' }}">
                         <!-- <i class="far fa-circle nav-icon"></i> -->
                         <i class="ri-folder-add-fill"></i>
                         <p>Transaksi</p>
@@ -84,7 +86,8 @@
                 </li>
                 @if (Auth::user()->level == 'admin')
                     <li class="nav-item">
-                        <a href="{{ route('user.index') }}" class="nav-link btn-menu">
+                        <a href="{{ route('user.index') }}"
+                            class="nav-link btn-menu {{ Route::currentRouteNamed('user.index') ? 'active' : '' }}">
                             <i class="ri-folder-user-fill"></i>
                             <p>Data user</p>
                         </a>
@@ -92,7 +95,8 @@
                 @endif
 
                 <li class="nav-item">
-                    <a href="{{ route('transaksi.index') }}" class="nav-link btn-menu">
+                    <a href="{{ route('transaksi.index') }}"
+                        class="nav-link btn-menu {{ Route::currentRouteNamed('transaksi.index') ? 'active' : '' }}">
                         <i class="ri-folder-open-fill"></i>
                         <p>Data Transaksi</p>
                     </a>

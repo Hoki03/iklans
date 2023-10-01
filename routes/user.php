@@ -3,7 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'admin:admin']], function () {
     Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
 
     Route::get('/user/create', [UserController::class, 'form'])->name('user.create');
