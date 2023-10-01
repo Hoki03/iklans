@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Validator;
 
 class TransaksiController extends Controller
 {
-    public function transaksi()
+    public function form()
     {
-        return view('transaksi.transaksi');
+        return view('transaksi.form');
     }
 
-    public function form(Request $request)
+    public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'nama'  =>  'required',
@@ -25,23 +25,69 @@ class TransaksiController extends Controller
         ]);
         if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
 
-        $data_transaksi['nama']     = $request->nama;
-        $data_transaksi['nominal']  = $request->nominal;
-        $data_transaksi['keterangan']  = $request->keterangan;
-        $data_transaksi['tanggal']  = $request->tanggal;
-        $data_transaksi['jenis_id']  = $request->jenis_id;
+        $index['nama']     = $request->nama;
+        $index['nominal']  = $request->nominal;
+        $index['keterangan']  = $request->keterangan;
+        $index['tanggal']  = $request->tanggal;
+        $index['jenis_id']  = $request->jenis_id;
 
-        Transaksi::create($data_transaksi);
+        Transaksi::create($index);
 
 
-        return view('transaksi.transaksi');
+        return view('transaksi.form');
+    }
+
+    public function index()
+    {
+        $index = Transaksi::get();
+        return view('transaksi.index', compact('index'));
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $index = Transaksi::find($id);
+        return view('transaksi.edit', compact('index'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama'  =>  'required',
+            'nominal' => 'required|numeric',
+            'keterangan' => 'required',
+            'tanggal' => 'required',
+            'jenis_id' => 'required|exists:jenis,id',
+        ]);
+        if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        $index['nama']     = $request->nama;
+        $index['nominal']  = $request->nominal;
+        $index['tanggal']  = $request->tanggal;
+        $index['jenis_id']  = $request->jenis_id;
+        if ($request->keterangan) {
+            $index['keterangan']  = $request->keterangan;
+        }
+
+        Transaksi::whereId($id)->update($index);
+
+        return back()->with('success', 'Data berhasil diedit');
     }
 
 
-
-    public function data_transaksi()
+    public function destroy(Request $request, $id)
     {
-        $data_transaksi = Transaksi::get();
-        return view('transaksi.datatransaksi', compact('data_transaksi'));
+        $index = Transaksi::find($id);
+        if ($index) {
+            $index->delete();
+        }
+        return redirect()->route('transaksi.form');
+    }
+
+    public function struk(Request $request, $id)
+    {
+        $index = Transaksi::find($id);
+        $transaksi = Transaksi::get();
+
+        return view('transaksi.struk', compact('index', 'transaksi'));
     }
 }
