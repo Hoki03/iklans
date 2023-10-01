@@ -155,10 +155,6 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
-                            <a href="data_transaksi" class="btn btn-sm btn-secondary float-right">Lihat Semua</a>
-                        </div>
                     </div>
                     <!-- /.card -->
                 </div>
@@ -212,10 +208,6 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
-                            <a href="data_transaksi" class="btn btn-sm btn-secondary float-right">Lihat Semua</a>
-                        </div>
                         <!-- /.card-footer -->
                     </div>
                 </div>
