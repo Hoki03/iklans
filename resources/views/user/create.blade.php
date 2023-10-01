@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Edit User</h1>
+                    <h1 class="m-0">Tambah User</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="data_user">Data User</a></li>
-                        <li class="breadcrumb-item active">Edit User</li>
+                        <li class="breadcrumb-item"><a href="index">Data User</a></li>
+                        <li class="breadcrumb-item active">Tambah User</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -24,14 +24,13 @@
             <div class="card card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('update_user', ['id' => $data_user->id]) }}" method="POST">
+                <form action="{{ route('create') }}" method="POST">
                     @csrf
-                    @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="nama1">Nama:</label>
                             <input name="name" type="name" class="form-control" id="nama1"
-                                placeholder="Masukkan nama" value="{{ $data_user->name }}">
+                                placeholder="Masukkan nama">
                             @error('name')
                                 <small>*{{ $message }}</small>
                             @enderror
@@ -39,7 +38,7 @@
                         <div class="form-group">
                             <label for="email1">Email:</label>
                             <input type="email" class="form-control" id="email1" name="email"
-                                placeholder="Masukkan email" value="{{ $data_user->email }}">
+                                placeholder="Masukkan email">
                             @error('email')
                                 <small>*{{ $message }}</small>
                             @enderror
@@ -47,12 +46,8 @@
                         <div class="form-group">
                             <label>Pilih</label>
                             <select class="form-control" type="level" name="level">
-                                <option value="admin" <?php if ($data_user->level == 'admin') {
-                                    echo 'selected="selected"';
-                                } ?>>Admin</option>
-                                <option value="operator" <?php if ($data_user->level == 'operator') {
-                                    echo 'selected="selected"';
-                                } ?>>Operator</option>
+                                <option value="admin">Admin</option>
+                                <option value="operator">Operator</option>
                             </select>
                             @error('level')
                                 <small>*{{ $message }}</small>

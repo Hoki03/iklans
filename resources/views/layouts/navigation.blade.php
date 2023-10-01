@@ -84,7 +84,7 @@
                 </li>
                 @if (Auth::user()->level == 'admin')
                     <li class="nav-item">
-                        <a href="data_user" class="nav-link btn-menu">
+                        <a href="index" class="nav-link btn-menu">
                             <i class="ri-folder-user-fill"></i>
                             <p>Data user</p>
                         </a>
