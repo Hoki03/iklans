@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
                     </div>
                 </form>
             </div>

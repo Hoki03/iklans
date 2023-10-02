@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary swalDefaultSuccess">Submit</button>
+                    <button type="submit" class="btn swalDefaultSuccess bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
                     </div>
                 </form>
             </div>
