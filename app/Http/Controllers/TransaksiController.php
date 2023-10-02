@@ -11,7 +11,7 @@ class TransaksiController extends Controller
 {
     public function form()
     {
-        return view('transaksi.form');
+        return view('transaksi.create');
     }
 
     public function create(Request $request)
@@ -34,7 +34,7 @@ class TransaksiController extends Controller
         Transaksi::create($index);
 
 
-        return view('transaksi.form');
+        return view('transaksi.create');
     }
 
     public function index()
