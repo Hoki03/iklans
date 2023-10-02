@@ -24,7 +24,7 @@
             <div class="card card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('create') }}" method="POST">
+                <form action="{{ route('user.create') }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">

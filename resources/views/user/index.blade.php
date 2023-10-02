@@ -47,7 +47,7 @@
                                         <td><?= $d['email'] ?></td>
                                         <td><?= $d['level'] ?></td>
                                         <td>
-                                            <a href="{{ route('edit', ['id' => $d->id]) }}" class="btn btn-primary"><i
+                                            <a href="{{ route('user.edit', ['id' => $d->id]) }}" class="btn btn-primary"><i
                                                     class="fas fa-pen"></i>Edit</a>
                                             <a data-toggle="modal" data-target="#modal-hapus{{ $d->id }}"
                                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a>
@@ -68,7 +68,8 @@
                                                         (<b>{{ $d->name }}</b></b>)</p>
                                                 </div>
                                                 <div class="modal-footer content-between">
-                                                    <form action="{{ route('destroy', ['id' => $d->id]) }}" method="POST">
+                                                    <form action="{{ route('user.destroy', ['id' => $d->id]) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="button" class="btn btn-default"

@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Iklan') }}</title>
-
+    <link rel="icon" href="{{ asset('Image/logo-kominfo-transparent.png') }}" />
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->

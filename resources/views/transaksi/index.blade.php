@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2 ">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data User</h1>
+                    <h1 class="m-0">Data Transaksi</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -66,7 +66,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($data_transaksi as $d) : ?>
+                                    <?php foreach ($index as $d) : ?>
                                     <tr>
                                         <td><?= $d['id'] ?></td>
                                         <td><?= $d['nama'] ?></td>
@@ -86,11 +86,11 @@
                                         }
                                         ?></td>
                                         <td>
-                                            <a href="{{ route('admin.edit_transaksi', ['id' => $d->id]) }}"
+                                            <a href="{{ route('transaksi.edit', ['id' => $d->id]) }}"
                                                 class="btn btn-primary"><i class="fas fa-pen"></i>Edit</a>
                                             <a data-toggle="modal" data-target="#modal-hapus{{ $d->id }}"
                                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a>
-                                            <a href="{{ route('admin.struk', ['id' => $d->id]) }}" rel="noopener"
+                                            <a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
                                                 target="_blank" class="btn btn-default"><i class="fas fa-print"></i>
                                                 Print</a>
                                         </td>
@@ -110,7 +110,7 @@
                                                         (<b>{{ $d->nama }}</b></b>)</p>
                                                 </div>
                                                 <div class="modal-footer content-between">
-                                                    <form action="{{ route('admin.hapus_transaksi', ['id' => $d->id]) }}"
+                                                    <form action="{{ route('transaksi.destroy', ['id' => $d->id]) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')

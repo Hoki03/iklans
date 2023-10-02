@@ -17,29 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
-
-    Route::get('/index', [UserController::class, 'index'])->name('index'); //--> /user/index
-    Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit'); //--> /user/edit/{id}
-    Route::put('/update/{id}', [UserController::class, 'update'])->name('update'); //--> /user/update/{id}
-    Route::delete('/destroy/{id}', [UserController::class, 'destroy'])->name('destroy'); //--> /user/destroy/{id}
-
-    Route::get('/create', [UserController::class, 'form'])->name('create');
-    Route::post('/create', [UserController::class, 'create']);
 
     Route::get('/register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
     Route::post('/register', [RegisteredUserController::class, 'store']);
-
-    Route::get('/data_transaksi', [HomeController::class, 'data_transaksi'])->name('data_transaksi');
-    Route::delete('/hapus_transaksi/{id}', [HomeController::class, 'hapus_transaksi'])->name('hapus_transaksi');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -47,4 +31,5 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/user.php';
 require __DIR__ . '/transaksi.php';

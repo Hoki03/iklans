@@ -24,7 +24,7 @@
             <div class="card card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="transaksi" method="POST">
+                <form action="create" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">

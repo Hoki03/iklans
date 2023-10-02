@@ -138,7 +138,8 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 1) { ?>
-                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
                                                 Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>
@@ -155,10 +156,6 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
-                            <a href="data_transaksi" class="btn btn-sm btn-secondary float-right">Lihat Semua</a>
-                        </div>
                     </div>
                     <!-- /.card -->
                 </div>
@@ -195,7 +192,8 @@
                                         <?php if ($dt->format('Y-m-d') == $now->format('Y-m-d')) { ?>
                                         <tr>
                                             <?php if ($d['jenis_id'] == 2) { ?>
-                                            <td><a href="" rel="noopener" target="_blank"><?= $d['id'] ?></a></td>
+                                            <td><a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
+                                                    target="_blank"><?= $d['id'] ?></a></td>
                                             <td><?= $d['nama'] ?></td>
                                             <td>
                                                 Rp. <?= number_format($d['nominal'], 0, ',', '.') ?>
@@ -212,10 +210,6 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <a href="form" class="btn btn-sm btn-info float-left">Tambah Transaksi</a>
-                            <a href="data_transaksi" class="btn btn-sm btn-secondary float-right">Lihat Semua</a>
-                        </div>
                         <!-- /.card-footer -->
                     </div>
                 </div>
