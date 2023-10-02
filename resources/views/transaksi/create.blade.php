@@ -37,10 +37,10 @@
                         </div>
                         <div class="form-group">
                             <label for="uang1">Uang Sebanyak:</label>
-                            <input type="nominal" class="form-control" id="rupiah1" name="nominal"
+                            <input type="rupiah1" class="form-control" id="rupiah1" name="rupiah1"
                                 placeholder="Maukkan nominal uang" onkeypress="format(); return hanyaAngka(event)">
                             <input type="nominal" class="form-control" id="nominal" name="nominal"
-                                placeholder="Maukkan nominal uang" on @disabled(true)>
+                                placeholder="Maukkan nominal uang" hidden>
                             @error('nominal')
                                 <small>*{{ $message }}</small>
                             @enderror
