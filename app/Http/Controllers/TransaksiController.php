@@ -58,6 +58,7 @@ class TransaksiController extends Controller
             'tanggal' => 'required',
             'jenis_id' => 'required|exists:jenis,id',
         ]);
+
         if ($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
 
         $index['nama']     = $request->nama;
@@ -70,7 +71,7 @@ class TransaksiController extends Controller
 
         Transaksi::whereId($id)->update($index);
 
-        return back()->with('success', 'Data berhasil diedit');
+        return redirect()->route('transaksi.index');
     }
 
 
