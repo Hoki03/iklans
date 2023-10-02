@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="uang1">Uang Sebanyak:</label>
-                            <input type="nominal" class="form-control" id="uang1" name="nominal"
+                            <input type="nominal" class="form-control" id="nominal" name="nominal"
                                 placeholder="Maukkan nominal uang">
                             @error('nominal')
                                 <small>*{{ $message }}</small>
