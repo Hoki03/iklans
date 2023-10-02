@@ -80,7 +80,7 @@ class TransaksiController extends Controller
         if ($index) {
             $index->delete();
         }
-        return redirect()->route('transaksi.form');
+        return redirect()->route('transaksi.index');
     }
 
     public function struk(Request $request, $id)
