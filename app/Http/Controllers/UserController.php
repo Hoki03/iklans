@@ -41,7 +41,7 @@ class UserController extends Controller
 
         User::whereId($id)->update($index);
 
-        return redirect()->route('index');
+        return redirect()->route('user.index');
     }
 
     public function destroy(Request $request, $id)
@@ -50,7 +50,7 @@ class UserController extends Controller
         if ($index) {
             $index->delete();
         }
-        return redirect()->route('index');
+        return redirect()->route('user.index');
     }
 
     public function form()
@@ -75,6 +75,6 @@ class UserController extends Controller
 
         User::create($index);
 
-        return redirect()->route('index');
+        return redirect()->route('user.index');
     }
 }
