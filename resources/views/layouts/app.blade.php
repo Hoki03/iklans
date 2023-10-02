@@ -169,11 +169,11 @@
         }
 
         function format() {
-            var rupiah2 = document.getElementById("rupiah2");
-            rupiah2.addEventListener("keyup", function(e) {
-                rupiah2.value = convertRupiah(this.value, "Rp. ");
+            var nominal = document.getElementById("nominal");
+            nominal.addEventListener("keyup", function(e) {
+                nominal.value = convertRupiah(this.value, "Rp. ");
             });
-            rupiah2.addEventListener('keydown', function(event) {
+            nominal.addEventListener('keydown', function(event) {
                 return isNumberKey(event);
             });
 
