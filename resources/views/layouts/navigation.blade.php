@@ -21,7 +21,7 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="beranda" class="brand-link">
+    <a href="{{ route('beranda') }}" class="brand-link">
         <center>
             <h3 class="brand-text font-weight-light">Iklan</h3>
         </center>
