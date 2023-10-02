@@ -169,12 +169,10 @@
         }
 
         function format() {
-            var nominal = document.getElementById("nominal");
-            nominal.addEventListener("keyup", function(e) {
-                nominal.value = convertRupiah(this.value, "Rp. ");
-            });
-            nominal.addEventListener('keydown', function(event) {
-                return isNumberKey(event);
+            var rupiah1 = document.getElementById("rupiah1");
+            var nominal = document.getElementById("rupiah1");
+            rupiah1.addEventListener("keyup", function(e) {
+                rupiah1.value = convertRupiah(this.value, "Rp. ");
             });
 
             function convertRupiah(angka, prefix) {
@@ -191,21 +189,6 @@
 
                 rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
                 return prefix == undefined ? rupiah : rupiah ? prefix + rupiah : "";
-            }
-
-            function isNumberKey(evt) {
-                key = evt.which || evt.keyCode;
-                if (key != 188 // Comma
-                    &&
-                    key != 8 // Backspace
-                    &&
-                    key != 17 && key != 86 & key != 67 // Ctrl c, ctrl v
-                    &&
-                    (key < 48 || key > 57) // Non digit
-                ) {
-                    evt.preventDefault();
-                    return;
-                }
             }
         }
     </script>

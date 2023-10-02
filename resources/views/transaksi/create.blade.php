@@ -37,8 +37,10 @@
                         </div>
                         <div class="form-group">
                             <label for="uang1">Uang Sebanyak:</label>
+                            <input type="nominal" class="form-control" id="rupiah1" name="nominal"
+                                placeholder="Maukkan nominal uang" onkeypress="format(); return hanyaAngka(event)">
                             <input type="nominal" class="form-control" id="nominal" name="nominal"
-                                placeholder="Maukkan nominal uang" onkeypress="format()">
+                                placeholder="Maukkan nominal uang" on @disabled(true)>
                             @error('nominal')
                                 <small>*{{ $message }}</small>
                             @enderror
@@ -73,7 +75,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                    <button type="submit" class="btn swalDefaultSuccess bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
+                        <button type="submit"
+                            class="btn swalDefaultSuccess bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
                     </div>
                 </form>
             </div>
