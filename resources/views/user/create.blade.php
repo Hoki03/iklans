@@ -43,6 +43,7 @@
                                 <small>*{{ $message }}</small>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label>Pilih</label>
                             <select class="form-control" type="level" name="level">
@@ -53,6 +54,7 @@
                                 <small>*{{ $message }}</small>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="pass">Password:</label>
                             <input type="password" class="form-control" id="pass" name="password"
@@ -63,7 +65,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                    <button type="submit" class="btn bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
+                        <button type="submit"
+                            class="btn bg-blue-900 text-white hover:bg-blue-700 hover:text-white">Submit</button>
                     </div>
                 </form>
             </div>

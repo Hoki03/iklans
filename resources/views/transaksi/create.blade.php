@@ -50,6 +50,9 @@
                             <div class="form-group">
                                 <textarea type="keterangan" name="keterangan" class="form-control" rows="3" placeholder="Enter ..."></textarea>
                             </div>
+                            @error('keterangan')
+                                <small>*{{ $message }}</small>
+                            @enderror
                             <!-- Date and time -->
                             <div class="form-group">
                                 <label>Tanggal:</label>

@@ -47,9 +47,8 @@
                         <div class="form-group">
                             <label>Pilih</label>
                             <select class="form-control" type="level" name="level">
-                                <option value="admin" <?php if ($index->level == 'admin') {
-                                    echo 'selected="selected"';
-                                } ?>>Admin</option>
+                                <option value="admin" {{ $index->level == 'admin' ? 'selected="selected"' : '' }}>Admin
+                                </option>
                                 <option value="operator" <?php if ($index->level == 'operator') {
                                     echo 'selected="selected"';
                                 } ?>>Operator</option>
