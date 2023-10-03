@@ -140,23 +140,4 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-    <script>
-        $(function() {
-            $("#table_user").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["excel", "print", "colvis"]
-            }).buttons().container().appendTo('#table_user_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
 @endsection
