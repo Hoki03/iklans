@@ -41,6 +41,26 @@
     <link rel="stylesheet" href="{{ asset('lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <style>
+        .buttons-print {
+            background-color: #1e3a8a;
+        }
+        .buttons-excel {
+            background-color: #1e3a8a;
+        }
+        .buttons-colvis {
+            background-color: #1e3a8a;
+        }
+        .buttons-print:hover {
+            background-color: #1d4ed8;
+        }
+        .buttons-excel:hover {
+            background-color: #1d4ed8;
+        }
+        .buttons-colvis:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -59,7 +79,7 @@
         @include('layouts.footer')
     </div>
 
-
+    <script src="https://kit.fontawesome.com/07fcd1bc3c.js" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->

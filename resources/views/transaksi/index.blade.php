@@ -91,7 +91,7 @@
                                             <a data-toggle="modal" data-target="#modal-hapus{{ $d->id }}"
                                                 class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a>
                                             <a href="{{ route('transaksi.struk', ['id' => $d->id]) }}" rel="noopener"
-                                                target="_blank" class="btn btn-default"><i class="fas fa-print"></i>
+                                                target="_blank" class="btn text-white bg-[#1f883d] hover:bg-[#1a7f37]"><i class="fas fa-print"></i>
                                                 Print</a>
                                         </td>
                                     </tr>
@@ -120,7 +120,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <!-- /.modal-content -->
+                                            <!-- /.modal-contendt -->
                                         </div>
                                         <!-- /.modal-dialog -->
                                     </div>

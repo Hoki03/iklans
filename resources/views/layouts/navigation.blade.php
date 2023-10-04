@@ -22,31 +22,43 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('beranda') }}" class="brand-link">
-        <center>
-            <h3 class="brand-text font-weight-light">Iklan</h3>
-        </center>
+        <img src="{{ asset('Image/logo-kominfo-transparent.png') }}" class="brand-image img-circle elevation- w-8 btn-menu" alt="User Image">
+        <!-- <i class="ri-folder-open-fill"></i> -->
+        <span class="brand-text font-weight-light text-white text-xl">Iklan</span>
+
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{{ asset('Image/logo-kominfo-transparent.png') }}" class="img-circle elevation-2"
-                    alt="User Image">
-            </div>
-            <div class="info">
+        <nav class="my-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="margin: 1.5rem 0;">
+                <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
 
                 @if (Auth::user()->level == 'admin')
-                    <a href="{{ route('profile.edit') }}" class="d-block">Admin Kominfo</a>
+                <li class="nav-item">
+                    <a href="{{ route('profile.edit') }}" class="nav-link btn-menu text-neutral-100">
+                        <i class="nav-icon fa-solid fa-user-shield"></i>
+                        <p>
+                            Admin Kominfo
+                        </p>
+                    </a>
+                </li>
                 @endif
 
                 @if (Auth::user()->level == 'operator')
-                    <a href="{{ route('profile.edit') }}" class="d-block">Operator Kominfo</a>
+                <li class="nav-item">
+                    <a href="{{ route('profile.edit') }}" class="nav-link btn-menu text-neutral-100">
+                        <i class="nav-icon fa-solid fa-user "></i>
+                        <p>
+                            Operator Kominfo
+                        </p>
+                    </a>
+                </li>
                 @endif
 
-            </div>
-        </div>
+            </ul>
+        </nav>
 
         <!-- SidebarSearch Form -->
         <!-- <div class="form-inline">
@@ -62,13 +74,11 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('beranda') }}"
-                        class="nav-link {{ Route::currentRouteNamed('beranda') ? 'active' : '' }}">
+                    <a href="{{ route('beranda') }}" class="nav-link btn-menu text-neutral-100 {{ Route::currentRouteNamed('beranda') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt "></i>
                         <p>
                             Beranda
@@ -77,27 +87,24 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('transaksi.create') }}"
-                        class="nav-link btn-menu {{ Route::currentRouteNamed('transaksi.create') ? 'active' : '' }}">
+                    <a href="{{ route('transaksi.create') }}" class="nav-link btn-menu text-neutral-100 {{ Route::currentRouteNamed('transaksi.create') ? 'active' : '' }}">
                         <!-- <i class="far fa-circle nav-icon"></i> -->
-                        <i class="ri-folder-add-fill"></i>
+                        <i class="fa-solid fa-money-bill-transfer nav-icon"></i>
                         <p>Transaksi</p>
                     </a>
                 </li>
                 @if (Auth::user()->level == 'admin')
-                    <li class="nav-item">
-                        <a href="{{ route('user.index') }}"
-                            class="nav-link btn-menu {{ Route::currentRouteNamed('user.index') ? 'active' : '' }}">
-                            <i class="ri-folder-user-fill"></i>
-                            <p>Data user</p>
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a href="{{ route('user.index') }}" class="nav-link text-neutral-100 {{ Route::currentRouteNamed('user.index') ? 'active' : '' }}">
+                        <i class="fa-solid fa-user-group nav-icon text-sm"></i>
+                        <p>Data user</p>
+                    </a>
+                </li>
                 @endif
 
                 <li class="nav-item">
-                    <a href="{{ route('transaksi.index') }}"
-                        class="nav-link btn-menu {{ Route::currentRouteNamed('transaksi.index') ? 'active' : '' }}">
-                        <i class="ri-folder-open-fill"></i>
+                    <a href="{{ route('transaksi.index') }}" class="nav-link btn-menu text-neutral-100 {{ Route::currentRouteNamed('transaksi.index') ? 'active' : '' }}">
+                        <i class="fa-solid fa-database nav-icon"></i>
                         <p>Data Transaksi</p>
                     </a>
                 </li>
@@ -105,17 +112,16 @@
                 <li class="nav-item" style="margin-top:15px;">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <x-dropdown-link :href="route('logout')" class="btn-logout nav-link"
-                            style="border: 1px solid tomato; color: tomato"
-                            onclick="event.preventDefault();
+                        <x-dropdown-link :href="route('logout')" class="btn-logout nav-link bg-red-700 text-white hover:bg-red-600 focus:bg-red-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition" style="border: 1px solid tomato; color: tomato" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                            <i class="ri-arrow-left-circle-fill"></i>
+                            <i class="fa-solid fa-right-from-bracket"></i>
                             <p>
                                 {{ __('Log Out') }}
                             </p>
                         </x-dropdown-link>
                     </form>
                 </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
