@@ -74,7 +74,7 @@
                                                         @method('DELETE')
                                                         <button type="button" class="btn btn-default"
                                                             data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Hapus</button>
+                                                        <button type="submit" class="btn bg-red-700 text-white hover:bg-red-600 focus:bg-red-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition">Hapus</button>
                                                     </form>
                                                 </div>
                                             </div>
